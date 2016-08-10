@@ -1,0 +1,129 @@
+<div class="row">
+
+    <form class="form-horizontal span12">
+
+
+        <fieldset>
+
+            <legend>User Details</legend>
+          
+            <div class="row">
+                <div class="span9">
+
+                    <div class="control-group">
+                        <label for="userId" class="control-label"><b>Id:</label>
+
+                        <div class="controls">
+                            <input id="userId" name="id" type="text" value="<%= id === null ? '' : id %>" class="span1"
+                                   disabled/>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="username" class="control-label"><b>username:</label>
+
+                        <div class="controls">
+                            <input type="text" id="name" name="username" value="<%= username %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+
+                 
+
+                    <div class="control-group">
+                        <label for="domain" class="control-label"><b>domain:</label>
+
+                        <div class="controls">
+                            <input type="text" id="domain" name="domain" value="<%= domain === '' ? 'AMERICAS' : domain %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+
+                  
+                   
+                    <div class="control-group">
+                         <label for="allowMultipleSessions" class="control-label"><b>allowMultipleSessions:</label>
+
+                       <div class="controls">
+                            <select class="span1" id="allowMultipleSessions" name="allowMultipleSessions" value="<%= allowMultipleSessions %>">
+                                <option
+                                <%= allowMultipleSessions == false?'selected':'' %>>No</option>
+                                <option
+                                <%= allowMultipleSessions == true?'selected':'' %>>Yes</option>
+                               
+                            </select>
+                        </div>
+                    </div>
+                     <% 
+                                if (appObj[0].superUser)  {  %>
+                     <div class="control-group"  > <% }
+                     else { %>
+                     
+                     <div class="control-group"   style="display: none;">
+                     
+                     <%}%>
+                       
+                         <label for="superUser" class="control-label"><b>superUser:</label>         
+                       <div class="controls">
+                      
+                            <select class="span1" id="superUser" name="superUser" value="<%= superUser %>">
+                                <option
+                                
+                                <%= superUser == false?'selected':'' %>>No</option>
+                                <option
+                                <%= superUser == true?'selected':'' %>>Yes</option>
+                            
+                            </select>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                   
+                     <div class="control-group">
+                         <label for="locked" class="control-label"><b>locked:</label>
+
+                         <div class="controls">
+                            <select class="span1" id="locked" name="locked" value="<%= locked %>">
+                                <option
+                                <%= locked == false?'selected':'' %>>No</option>
+                                <option
+                                <%= locked == true?'selected':'' %>>Yes</option>
+                               
+                            </select>
+                        </div>
+                    </div>
+                   <div class="control-group">
+                        <label for="retryCount" class="control-label"><b>retryCount:</label>
+
+                        <div class="controls">
+                            <input type="text" id="retryCount" name="retryCount" value="<%= retryCount %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+               <div class="control-group">
+                     
+                         <div class="controls">
+                            <input type="hidden" id="version" name="version" value="<%= version %>"/> 
+                        </div>
+                    </div>
+
+                </div>
+        </fieldset>
+
+        <div class="form-actions">
+            <a href="#" class="btn btn-primary save">Save</a>
+                  <!--      <%= id === null ? '' : ' '%> -->
+             <a href="#" class="btn btn-primary cancel">Cancel</a>
+        </div>
+    </form>
+</div>
+<div class="row status-bar">
+    <div class="span12">
+        <div class="alert alert-success" style="display: none">
+            <b>Success!</b> User saved successfully
+        </div>
+    </div>
+</div>
+
+
